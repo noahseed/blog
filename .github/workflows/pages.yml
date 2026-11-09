@@ -15,8 +15,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
     steps:
       - uses: actions/checkout@v4
+      - name: Read GitHub Pages configuration
+        id: pages
+        uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -24,7 +30,7 @@ jobs:
       - run: npm ci
       - run: node scripts/build-pages.mjs
         env:
-          PAGES_BASE_PATH: /sebastien-site-personnel
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
