@@ -34,7 +34,7 @@ try {
   await writeFile(resolve(out, 'style.css'), css);
   await writeFile(resolve(out, '.nojekyll'), '');
   await writeFile(resolve(out, 'index.html'), `<!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sébastien Rondeau Cameira — Web, mobile &amp; DevOps</title><meta name="description" content="Le site personnel de Sébastien Rondeau Cameira : développement web et mobile, parcours et projets."><link rel="icon" href="${base}/favicon.svg"><link rel="stylesheet" href="${base}/style.css"></head><body>${page}</body></html>`);
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sébastien Rondeau Cameira — Web, mobile &amp; DevOps</title><meta name="description" content="Le site personnel de Sébastien Rondeau Cameira : développement web et mobile, parcours et projets."><link rel="icon" href="${base}/favicon.ico" sizes="any"><link rel="icon" href="${base}/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${base}/style.css"></head><body>${page}</body></html>`);
   console.log(`GitHub Pages export ready: ${out} (base: ${base || '/'})`);
 } finally {
   await rm(temp, { recursive: true, force: true });
