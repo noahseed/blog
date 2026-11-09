@@ -1,4 +1,4 @@
-# Site personnel de Sébastien Rondeau-Cameira
+# Site personnel de Sébastien Rondeau Cameira
 
 Développement web, mobile et DevOps. Site réalisé avec Vinext et hébergé sur Sites.
 
